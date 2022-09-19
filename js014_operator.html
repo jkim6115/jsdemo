@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        조건연산자 : 조건식 ? 참 : 거짓
+                       조건식 ? (조건식 : 참1 : 거짓 1) : 거짓
+                       예) 회원이고, VIP이면... 회원이고, 일반이면...
+      */
+      let menber = true;
+      let grade = "VIP";
+      let count = 1000;
+
+      let result = menber ? (grade == "VIP" ? 0.3 : 0.2) : 0.02;
+      console.log(count - result * count);
+    </script>
+  </body>
+</html>

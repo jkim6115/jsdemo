@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        비교연산자 : < > <= >= == != === !==
+        == : 메모리에 저장된 값만 비교
+        === : 메모리에 저장된 값과 데이터타입을 비교
+        */
+
+      let numX = 5;
+      let numY = 5;
+      console.log(`numX==numY : ${numX == numY}`);
+      console.log(`numX===numY : ${numX === numY}`);
+
+      let objX = new Number(numX);
+      let objY = new Number(numY);
+      console.log(`objX==objY : ${objX == objY}`);
+      console.log(`objX===objY : ${objX === objY}`);
+
+      let dataX = 3;
+      let dataY = "3";
+      console.log(`dataX==dataY : ${dataX == dataY}`);
+      console.log(`dataX===dataY : ${dataX === dataY}`);
+    </script>
+  </body>
+</html>

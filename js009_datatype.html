@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //datatype : primtive datatype(기본 데이터 타입), referance datatype(참조 데이터 타입)
+      let num = 3;
+      console.log(typeof num);
+
+      console.log(typeof num);
+
+      let avg = 4.5;
+      console.log(`avg=${avg}, ${typeof avg}`);
+
+      let check = true;
+      console.log(`check=${check}, ${typeof check}`);
+
+      let data = "javascript";
+      console.log(`data=${data}, ${typeof data}`);
+
+      let na = undefined;
+      console.log(`undefined=${undefined}, ${typeof undefined}`);
+
+      let name = null;
+      console.log(`name=${name}, ${typeof name}`);
+
+      let loc = new String("node");
+      console.log(`loc=${loc}, ${typeof loc}`);
+      console.log(`${loc instanceof String}`);
+
+      let jumsu = new Number(10);
+      console.log(`jumsu=${jumsu}, ${typeof jumsu}`);
+      console.log(`${jumsu instanceof Number}`);
+
+      //변수의 값으로 사용되는 함수는 익명함수로 정의
+      let fn = function () {
+        console.log("function");
+      };
+      console.log(`fn=${fn}, ${typeof fn}`);
+
+      let arr = [1, 2, 3];
+      console.log(`arr=${arr}, ${typeof arr}`);
+      console.log(`${arr instanceof Array}`);
+
+      let customer = { name: "홍길동", age: 30 };
+      console.log(`customer=${customer}, ${typeof customer}`);
+      console.log(`${customer instanceof Object}`);
+
+      console.log(`${customer.name} ${customer.age}`);
+    </script>
+  </body>
+</html>
