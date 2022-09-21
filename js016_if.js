@@ -2,7 +2,8 @@
     제어문(statement) : 프로그램의 흐름을 제어할 수 있는 실행문
         if-else
         switch-case
-        for, while
+        for, while, do-while, for-in, for-0f
+        label(임의의 정의), cuntinue, break
     
     조건문 : 조건의 진리값에 따라 제어
 */

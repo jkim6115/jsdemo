@@ -102,7 +102,7 @@ console.log("===================================");
  */
 
 for (let leapYear = 2001; leapYear <= 2012; leapYear++) {
-  if (leapYear % 4 == 0 && leapYear % 100 != 0) {
+  if ((leapYear % 4 == 0 && leapYear % 100 != 0) || leapYear % 400 == 0) {
     console.log(leapYear);
   }
 }
@@ -122,12 +122,13 @@ console.log("===================================");
 let x = 0;
 let y = 0;
 for (x = 0; x <= 10; x++) {
-  if (2 * x + 3 * y == 10) {
-    console.log(`x=${x}, y=${y}`);
-  }
+  // if (2 * x + 3 * y == 10) {
+  //   console.log(`x=${x}, y=${y}`);
+  // }
   for (y = 0; y <= 10; y++) {
     if (2 * x + 3 * y == 10) {
-      console.log(`x=${x}, y=${y}`);
+      // console.log(`x=${x}, y=${y}`);
+      Process.stderr.write(`x=${x}, y=${y}`);
     }
   }
 }
