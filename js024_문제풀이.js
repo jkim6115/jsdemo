@@ -20,8 +20,7 @@ function process(arr) {
 
 //주어진 arr배열에서 3의 배수의 갯수를 리턴하는  함수 정의
 function count(process) {
-  let cnt = process.length;
-  return cnt;
+  return process.length;
 }
 
 //주어진 arr배열에서 3의 배수 합을 리턴하는 함수 정의
@@ -32,9 +31,9 @@ function arrPlus(process) {
   }
   return sum;
 }
-process(arr);
+
 console.log(`주어진 배열에서 3의 배수의 개수 => ${count(process(arr))}`);
-console.log(`주어진 배열에서 3의 배수의 개수 => ${arrPlus(process(arr))}\n`);
+console.log(`주어진 배열에서 3의 배수의 합 => ${arrPlus(process(arr))}\n`);
 
 /*
   [문제2]
@@ -47,15 +46,15 @@ console.log(`주어진 배열에서 3의 배수의 개수 => ${arrPlus(process(a
 let alpa = ["j", "a", "v", "a", "s", "c", "r", "i", "p", "t"];
 
 //alpa배열의 요소를  reverse한 후 리턴하는 함수 정의
-function reverse(alpa) {
+function reverseArr(alpa) {
   alpa.reverse();
   return alpa;
 }
 
 //data배열의 출력하는  함수 정의
 function display(data) {
-  let arr = data.toString().replace(/,/gi, "");
-  let revArr = reverse(data).toString().replace(/,/gi, "");
+  let arr = data.toString().replace(/,/g, "");
+  let revArr = reverseArr(data).toString().replace(/,/g, "");
   console.log(arr);
   console.log(revArr);
   console.log(arr);
