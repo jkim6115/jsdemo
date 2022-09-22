@@ -18,6 +18,7 @@ function separator(data) {
 separator("http://www.daum.net");
 separator("ftp://ftp.microsoft.com");
 
+console.log("\n");
 /*
 [문제2]
 [데이터]
@@ -35,8 +36,17 @@ let person2 = { name: "진여구", phone: "010-253-2253" };
 
 //출력결과를 참고하여 display()함수를 구현하세요
 function display(customer) {
+  let phone = customer.phone.replaceAll(/[^0-9]/g, "");
+  let result = "";
+
   console.log(`이름: ${customer.name}`);
-  console.log(`연락처: ${customer.phone}`);
+  if (phone.length == 11) {
+    result = phone.replace(/(\d{3})(\d{4})(\d{4})/, "$1-****-$3");
+    console.log(`연락처: ${result}`);
+  } else {
+    result = phone.replace(/(\d{3})(\d{3})(\d{4})/, "$1-***-$3");
+    console.log(`연락처: ${result}`);
+  }
 }
 display(person1);
 display(person2);
