@@ -40,21 +40,28 @@ let data2 = [
   ["홍길동", 90, 85, 40],
   ["이영희", 100, 35, 75],
 ];
-let person1 = data2[0];
-let person2 = data2[1];
 
-function calculator(arr) {
-  let sum = 0;
-  let cnt = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] >= 0) {
-      sum += arr[i];
-      cnt++;
-    }
-  }
-  let average = sum / cnt;
-  arr.push(sum, average.toFixed(2));
-  return arr;
+function SUM(data) {
+  let result = data
+    .filter((element) => element >= 0)
+    .reduce((previousValue, currentValue) => previousValue + currentValue);
+  return result;
 }
 
-console.log();
+function AVERAGE(data) {
+  let length = data.filter((element) => element >= 0).length;
+  let result = data
+    .filter((element) => element >= 0)
+    .reduce((previousValue, currentValue) => previousValue + currentValue);
+  return Number((result / length).toFixed(2));
+}
+
+data2[0].push(SUM(data2[0]), AVERAGE(data2[0]));
+data2[1].push(SUM(data2[1]), AVERAGE(data2[1]));
+
+console.log(data2);
+if (data2[0][5] > data2[1][5]) {
+  console.log(`최고점: ${data2[0][5]}`);
+} else {
+  console.log(`최고점: ${data2[1][5]}`);
+}
