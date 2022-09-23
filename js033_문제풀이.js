@@ -60,8 +60,8 @@ data2[0].push(SUM(data2[0]), AVERAGE(data2[0]));
 data2[1].push(SUM(data2[1]), AVERAGE(data2[1]));
 
 console.log(data2);
-if (data2[0][5] > data2[1][5]) {
-  console.log(`최고점: ${data2[0][5]}`);
+if (data2[0].slice(-1) > data2[1].slice(-1)) {
+  console.log(`최고점: ${data2[0].slice(-1)}`);
 } else {
-  console.log(`최고점: ${data2[1][5]}`);
+  console.log(`최고점: ${data2[1].slice(-1)}`);
 }
