@@ -48,6 +48,13 @@ function display(customer) {
     result = phone.replace(/(\d{3})-(\d{3})-(\d{4})/, "$1-***-$3");
     console.log(`연락처: ${result}`);
   }
+
+  // let start = customer.phone.indexOf("-");
+  // let end = customer.phone.lastIndexOf("-");
+  // console.log(`이름: ${customer.name}`);
+  // let searchWord = customer.phone.substring(start + 1, end);
+  // let phoneStar = "*".repeat(searchWord.length);
+  // console.log(`연락처: ${customer.phone.replace(searchWord, phoneStar)}`);
 }
 display(person1);
 display(person2);
