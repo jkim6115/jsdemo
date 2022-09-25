@@ -56,12 +56,16 @@ function AVERAGE(data) {
   return Number((result / length).toFixed(2));
 }
 
-data2[0].push(SUM(data2[0]), AVERAGE(data2[0]));
-data2[1].push(SUM(data2[1]), AVERAGE(data2[1]));
+for (let i = 0; i < data2.length; i++) {
+  data2[i].push(SUM(data2[i]), AVERAGE(data2[i]));
+}
+
+let max = Number(data2[0].slice(-1));
+for (let j = 0; j < data2.length; j++) {
+  if (max < data2[j].slice(-1)) {
+    max = Number(data2[j].slice(-1));
+  }
+}
 
 console.log(data2);
-if (data2[0].slice(-1) > data2[1].slice(-1)) {
-  console.log(`최고점: ${data2[0].slice(-1)}`);
-} else {
-  console.log(`최고점: ${data2[1].slice(-1)}`);
-}
+console.log(`최고점: ${max}`);
