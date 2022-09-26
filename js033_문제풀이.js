@@ -12,15 +12,26 @@ let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
 */
 
 let data = [1, 2, 3, undefined, 4, undefined, undefined, 5];
-let arr = [];
-for (let i = 0; i < data.length; i++) {
-  if (data[i] != undefined) {
-    arr.push(data[i]);
-  }
-}
-let sum = arr.reduce((total, num) => total + num);
+// let arr = [];
+// for (let i = 0; i < data.length; i++) {
+//   if (data[i] != undefined) {
+//     arr.push(data[i]);
+//   }
+// }
+// let sum = arr.reduce((total, num) => total + num);
+// console.log(`합계: ${sum}`);
+// console.log(`평균: ${sum / arr.length}`);
+
+let result = data.filter(function (element) {
+  return element != undefined;
+});
+
+let sum = result.reduce(function (total, element) {
+  return total + element;
+});
+
 console.log(`합계: ${sum}`);
-console.log(`평균: ${sum / arr.length}`);
+console.log(`평균: ${sum / result.length}`);
 
 /*
  [문제2] 
@@ -36,36 +47,53 @@ console.log(`평균: ${sum / arr.length}`);
   최고점: 71.67
 */
 
-let data2 = [
+let exam = [
   ["홍길동", 90, 85, 40],
   ["이영희", 100, 35, 75],
 ];
 
-function SUM(data) {
-  let result = data
-    .filter((element) => element >= 0)
-    .reduce((previousValue, currentValue) => previousValue + currentValue);
-  return result;
+// function SUM(data) {
+//   let result = data
+//     .filter((element) => element >= 0)
+//     .reduce((previousValue, currentValue) => previousValue + currentValue);
+//   return result;
+// }
+
+// function AVERAGE(data) {
+//   let length = data.filter((element) => element >= 0).length;
+//   let result = data
+//     .filter((element) => element >= 0)
+//     .reduce((previousValue, currentValue) => previousValue + currentValue);
+//   return Number((result / length).toFixed(2));
+// }
+
+// for (let i = 0; i < exam.length; i++) {
+//   exam[i].push(SUM(exam[i]), AVERAGE(exam[i]));
+// }
+
+// let max = Number(exam[0].slice(-1));
+// for (let j = 0; j < exam.length; j++) {
+//   if (max < exam[j].slice(-1)) {
+//     max = Number(exam[j].slice(-1));
+//   }
+// }
+
+// console.log(exam);
+// console.log(`최고점: ${max}`);
+
+for (let i = 0; i < exam.length; i++) {
+  let fullname, jumsu;
+  [fullname, ...jumsu] = exam[i];
+  let hap = jumsu.reduce(function (total, element) {
+    return total + element;
+  });
+  exam[i].push(hap);
+  exam[i].push((hap / jumsu.length).toFixed(2));
 }
 
-function AVERAGE(data) {
-  let length = data.filter((element) => element >= 0).length;
-  let result = data
-    .filter((element) => element >= 0)
-    .reduce((previousValue, currentValue) => previousValue + currentValue);
-  return Number((result / length).toFixed(2));
-}
+console.log(exam);
 
-for (let i = 0; i < data2.length; i++) {
-  data2[i].push(SUM(data2[i]), AVERAGE(data2[i]));
-}
-
-let max = Number(data2[0].slice(-1));
-for (let j = 0; j < data2.length; j++) {
-  if (max < data2[j].slice(-1)) {
-    max = Number(data2[j].slice(-1));
-  }
-}
-
-console.log(data2);
-console.log(`최고점: ${max}`);
+let lastEle = exam.map((element) => {
+  return element[element.length - 1];
+});
+console.log(`최고점: ${Math.max(...lastEle)}`);
