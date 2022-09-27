@@ -1,0 +1,18 @@
+div.wrap div {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background-color: #ffc107;
+  text-align: center;
+  line-height: 80px;
+  font-size: 50px;
+  margin: 5px;
+  display: inline-block;
+  /* border: 1px solid black; */
+  /* float: left; */
+  /* font-weight: bolder; */
+}
+
+button {
+  margin: 10px;
+}
